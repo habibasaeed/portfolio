@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-l from-purple-950 via-black  to-black  text-zinc-100 font-sans;
+}
