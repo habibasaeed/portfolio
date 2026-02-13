@@ -8,7 +8,7 @@ import Navbar from "./Components/Navbar";
 import About from "./Components/About";
 function App() {
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-l from-purple-950 via-black to-black text-zinc-100 font-sans">
       <Navbar />
       <Hero />
 
@@ -16,7 +16,7 @@ function App() {
       <Projects />
       <Education />
       <Contact />
-    </>
+    </div>
   );
 }
 
