@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SiReact, SiNodedotjs, SiExpress, SiTailwindcss } from "react-icons/si";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 const projects = [
   {
@@ -36,6 +37,7 @@ const projects = [
       "/projects/tastybite6.jpg",
     ],
     tech: [SiReact, SiTailwindcss],
+    liveDemo: "https://tasty-bite-zeta.vercel.app/",
   },
   {
     title: "Traffic – Smart Landing Page",
@@ -57,7 +59,7 @@ const Projects = () => {
 
   return (
     <section className="py-24 px-6 " id="projects">
-      <div className="max-w-6xl mx-auto" >
+      <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center">
           <span className="text-primary">Projects</span>
         </h2>
@@ -72,9 +74,18 @@ const Projects = () => {
               <img
                 src={project.cover}
                 alt={project.title}
-                className="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
+                className="w-full h-56 object-cover group-hover:scale-105 transition duration-500 relative"
               />
-
+              <div
+                className="absolute bottom-4 right-4 text-primary flex align-center"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(project.liveDemo, "_blank");
+                }}
+              >
+                <span className="pr-2"> Live Demo </span>
+                <FaArrowUpRightFromSquare size={20} className="" />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-zinc-400 text-sm">{project.shortDesc}</p>
@@ -127,13 +138,13 @@ const Projects = () => {
             </div>
 
             {/* Images Gallery */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 ">
               {selected.images.map((img, i) => (
                 <img
                   key={i}
                   src={img}
                   alt="project"
-                  className="rounded-lg border border-zinc-800"
+                  className="rounded-lg border border-zinc-800 "
                 />
               ))}
             </div>
