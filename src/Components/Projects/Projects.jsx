@@ -51,6 +51,7 @@ const projects = [
       "/projects/traffic1.jpg",
     ],
     tech: [SiReact, SiTailwindcss],
+    liveDemo: "https://trafficgradd.pages.dev/",
   },
 ];
 
